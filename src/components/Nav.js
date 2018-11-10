@@ -5,7 +5,7 @@ import "./Nav.css";
 export default function Nav(props) {
   return (
     <nav className="nav-container">
-      <div>Noted</div>
+      <div><Link to ="/">Noted</Link></div>
       <Link to="/login" class="nav-item">
         Login
       </Link>
