@@ -1,0 +1,12 @@
+.fp-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.section-one, .section-two, .section-three {
+    height: 200px;
+}
+.section-two {
+    background-color: grey;
+}
