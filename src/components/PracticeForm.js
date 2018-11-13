@@ -36,9 +36,6 @@ export default function PracticeForm(props) {
             <button type="submit">Submit Practice</button>
           </form>
         </section>
-        <section>
-            <Sidebar />
-        </section>
       </div>
     );
 }
