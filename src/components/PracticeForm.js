@@ -3,16 +3,12 @@ import { Field, reduxForm, focus } from 'redux-form';
 import { newPractice } from '../actions/Practice';
 import Input from './Input';
 
-
 export class PracticeForm extends React.Component {
-
-    onSubmit(values) {
-      const {date, timePracticed, scales, otherMusic} = values;
-      const user = {date, timePracticed, scales, otherMusic};
-      return this.props
-          .dispatch(newPractice(user))
+  onSubmit(values) {
+    const { date, timePracticed, scales, otherMusic } = values;
+    const user = { date, timePracticed, scales, otherMusic };
+    return this.props.dispatch(newPractice(user));
   }
-  
 
   render() {
     return (

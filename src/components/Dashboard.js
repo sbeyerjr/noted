@@ -12,10 +12,11 @@ export class Dashboard extends React.Component {
   render() {
     return (
       <div className="dashboard">
-        <div className="dashboard-name">Hello, {this.props.name}! Let's start practicing!</div>
+        <div className="dashboard-name">
+          Hello, {this.props.name}! Let's start practicing!
+        </div>
         <PracticeForm />
       </div>
-       
     );
   }
 }
@@ -23,7 +24,7 @@ export class Dashboard extends React.Component {
 const mapStateToProps = state => {
   const { currentUser } = state.auth;
   return {
-    name: `${currentUser.firstName}`,
+    name: `${currentUser.firstName}`
   };
 };
 
