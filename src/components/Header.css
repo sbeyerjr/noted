@@ -1,4 +1,18 @@
 .header {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  background-color: grey;
+  height: 100px;
+  margin-top: -1px;
+  padding: 10px;
+}
+
+.nav-item {
+  margin-left: auto;
+  padding-right: 10px;
 }

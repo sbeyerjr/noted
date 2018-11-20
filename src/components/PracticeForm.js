@@ -1,41 +1,48 @@
 import React from 'react';
-import Sidebar from './Sidebar';
-import './PracticeForm.css';
+import { Field, reduxForm, focus } from 'redux-form';
+import { newPractice } from '../actions/Practice';
+import Input from './Input';
 
-export default function PracticeForm(props) {
+
+export class PracticeForm extends React.Component {
+
+    onSubmit(values) {
+      const {date, timePracticed, scales, otherMusic} = values;
+      const user = {date, timePracticed, scales, otherMusic};
+      return this.props
+          .dispatch(newPractice(user))
+  }
+  
+
+  render() {
     return (
-        <div>
-        <section>
-          <h3>What Did You Practice?</h3>
-          <form class="practice-form">
-            <div>
-              <label for="date">Date</label>
-              <input
-                placeholder="Date"
-                type="text"
-                name="date"
-                id="date"
-              />
-            </div>
-            <div>
-              <label for="time-practiced">Time Practiced</label>
-              <input
-                type="text"
-                name="time-practiced"
-                id="time-practiced"
-                placeholder="Time Practiced"
-              />
-            </div>
-            <div>
-              <label for="scales">Scales Practiced</label>
-              <input type="text" name="scales" id="scales" />
-            </div>
-            <div>
-            <textarea name="other-music" form="practice-form">What Else Did You Practice?</textarea>
-            </div>
-            <button type="submit">Submit Practice</button>
-          </form>
-        </section>
-      </div>
+      <form
+        className="practice-form"
+        onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
+      >
+        <label htmlFor="date">Today's Date</label>
+        <Field component={Input} type="text" name="date" />
+        <label htmlFor="timePracticed">How Long Did You Practice?</label>
+        <Field component={Input} type="text" name="timePracticed" />
+        <label htmlFor="scales">Which Scales Did You Practice?</label>
+        <Field component={Input} type="text" name="scales" />
+        <label htmlFor="otherMusic">
+          What Other Music Did You Practice? Be Specific.
+        </label>
+        <Field component={Input} type="text" name="otherMusic" />
+        <button
+          type="submit"
+          disabled={this.props.pristine || this.props.submitting}
+        >
+          Log Practice
+        </button>
+      </form>
     );
+  }
 }
+
+export default reduxForm({
+  form: 'practice',
+  onSubmitFail: (errors, dispatch) =>
+    dispatch(focus('practice', Object.keys(errors)[0]))
+})(PracticeForm);
