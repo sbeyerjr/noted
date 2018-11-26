@@ -2,6 +2,7 @@ import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
 import { newPractice } from '../actions/Practice';
 import Input from './Input';
+import './RegistrationForm.css';
 
 export class PracticeForm extends React.Component {
   onSubmit(values) {

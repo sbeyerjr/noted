@@ -22,11 +22,19 @@ export class HeaderBar extends React.Component {
     let usersFirstName;
     let logInButton;
     let registerButton;
+    let myDashboard;
+    let myPractices;
     if (this.props.loggedIn) {
       logOutButton = (
-        <button className="nav-item" onClick={() => this.logOut()}>
+        <button onClick={() => this.logOut()}>
           Log out
         </button>
+      );
+      myDashboard = (
+        <a href="/dashboard" className="nav-item">My Dashboard</a>
+      );
+      myPractices = (
+        <a href="/practices" >My Practices</a>
       );
     }
     if (this.props.loggedOut) {
@@ -41,11 +49,13 @@ export class HeaderBar extends React.Component {
       <header>
         <div className="nav-container">
           <div>
-            <Link to="/">Noted</Link>
+            <Link to="/"><img src="http://stevenbeyerjr.com/img/notedlogo.png" alt="noted-logo" /></Link>
           </div>
           {logInButton}
           {registerButton}
           {usersFirstName}
+          {myDashboard}
+          {myPractices}
           {logOutButton}
         </div>
       </header>

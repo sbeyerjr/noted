@@ -5,6 +5,7 @@ import { Route, withRouter } from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';
 import Dashboard from './Dashboard';
+import Practices from './MyPractices';
 import RegistrationPage from './RegistrationPage';
 import { refreshAuthToken } from '../actions/Auth';
 import Login from './Login';
@@ -42,11 +43,11 @@ export class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Header />
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/register" component={RegistrationPage} />
+        <Route exact path="/practices" component={Practices} />
       </div>
     );
   }
