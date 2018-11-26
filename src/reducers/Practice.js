@@ -1,7 +1,4 @@
-import {
-  PRACTICE_SUCCESS,
-  PRACTICE_ERROR
-} from '../actions/GetRequest';
+import { PRACTICE_SUCCESS, PRACTICE_ERROR } from '../actions/GetRequest';
 
 const initialState = {
   date: '',

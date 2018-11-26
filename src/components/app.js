@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
-
-import Header from './Header';
 import Home from './Home';
 import Dashboard from './Dashboard';
 import Practices from './MyPractices';

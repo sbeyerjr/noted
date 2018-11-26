@@ -26,16 +26,16 @@ export class HeaderBar extends React.Component {
     let myPractices;
     if (this.props.loggedIn) {
       logOutButton = (
-        <button onClick={() => this.logOut()}>
+        <button className="logout-btn" onClick={() => this.logOut()}>
           Log out
         </button>
       );
       myDashboard = (
-        <a href="/dashboard" className="nav-item">My Dashboard</a>
+        <a href="/dashboard" className="nav-item">
+          My Dashboard
+        </a>
       );
-      myPractices = (
-        <a href="/practices" >My Practices</a>
-      );
+      myPractices = <a href="/practices">My Practices</a>;
     }
     if (this.props.loggedOut) {
       logInButton = (
@@ -49,7 +49,12 @@ export class HeaderBar extends React.Component {
       <header>
         <div className="nav-container">
           <div>
-            <Link to="/"><img src="http://stevenbeyerjr.com/img/notedlogo.png" alt="noted-logo" /></Link>
+            <Link to="/">
+              <img
+                src="http://stevenbeyerjr.com/img/notedlogo.png"
+                alt="noted-logo"
+              />
+            </Link>
           </div>
           {logInButton}
           {registerButton}

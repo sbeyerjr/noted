@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import requiresLogin from './RequiresLogin';
 import { fetchProtectedData } from '../actions/ProtectedData';
 import PracticeForm from './PracticeForm';
-import Sidebar from './MyPractices';
 import Header from './Header';
+import './Dashboard.css';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
@@ -14,11 +14,15 @@ export class Dashboard extends React.Component {
   render() {
     return (
       <div className="dashboard">
-      <Header />
-        <div className="dashboard-name">
-          Hello, {this.props.name}! Let's start practicing!
+        <Header />
+        <div className="wrapper">
+          <div className="flex-container">
+            <p className="flex-item">
+              Hello, {this.props.name}! Let's start practicing!
+            </p>
+            <PracticeForm />
+          </div>
         </div>
-        <PracticeForm />
       </div>
     );
   }
