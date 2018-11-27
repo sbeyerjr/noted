@@ -23,6 +23,7 @@
   padding: 2.625rem 0 2.625rem 0;
 }
 .flex-container {
+  margin-top:-100px;
   display: flex;
   position: relative;
   max-width: 100%;
@@ -85,4 +86,9 @@
 .btn-link:hover {
   color: #ffffff;
   transition: color 0.5s;
+}
+.welcome-text {
+  color: white;
+  margin-top: -10px;
+  font-size: 1.3em
 }

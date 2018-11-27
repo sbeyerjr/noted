@@ -17,9 +17,10 @@ export class Dashboard extends React.Component {
         <Header />
         <div className="wrapper">
           <div className="flex-container">
-            <p className="flex-item">
-              Hello, {this.props.name}! Let's start practicing!
-            </p>
+            <h2 className="flex-item">
+              Hey, {this.props.name}! 
+            </h2>
+            <p className="welcome-text">What did you practice today?</p>
             <PracticeForm />
           </div>
         </div>

@@ -3,8 +3,9 @@ import axios from 'axios';
 import { API_BASE_URL } from '../config';
 import Header from './Header';
 import './MyPractice.css';
+import requiresLogin from './RequiresLogin';
 
-export default class Practices extends React.Component {
+class Practices extends React.Component {
   // State will apply to the practices object which is set to loading by default
   state = {
     dates: [],
@@ -34,41 +35,46 @@ export default class Practices extends React.Component {
     return (
       <div>
         <Header />
-        <div class="table-container" role="table" aria-label="Destinations">
-          <div class="flex-table header" role="rowgroup">
-            <div class="flex-row first" role="columnheader">
-              DATE
-            </div>
-            <div class="flex-row" role="columnheader">
-              MINUTES PRACTICED
-            </div>
-            <div class="flex-row" role="columnheader">
-              SCALES PRACTICED
-            </div>
-            <div class="flex-row" role="columnheader">
-              OTHER MUSIC PRACTICED
-            </div>
-          </div>
-          <div>
-            {this.state.dates.map(date => (
-              <div class="flex-table row" role="rowgroup">
-                <div class="flex-row first" role="cell">
-                  <li key={date.id}> {date.date}</li>
+        <div className="wrapper">
+          <div className="flex-container">
+            <div class="table-container" role="table" aria-label="Destinations">
+              <div class="flex-table header" role="rowgroup">
+                <div class="flex-row first" role="columnheader">
+                  DATE
                 </div>
-                <div class="flex-row" role="cell">
-                  <li key={date.id}> {date.timePracticed}</li>
+                <div class="flex-row" role="columnheader">
+                  MINUTES PRACTICED
                 </div>
-                <div class="flex-row" role="cell">
-                  <li key={date.id}>{date.scales}</li>
+                <div class="flex-row" role="columnheader">
+                  SCALES PRACTICED
                 </div>
-                <div class="flex-row" role="cell">
-                  <li key={date.id}> {date.otherMusic}</li>
+                <div class="flex-row" role="columnheader">
+                  OTHER MUSIC PRACTICED
                 </div>
               </div>
-            ))}
+              <div>
+                {this.state.dates.map(date => (
+                  <div class="flex-table row" role="rowgroup">
+                    <div class="flex-row first" role="cell">
+                      <li key={date.id}> {date.date}</li>
+                    </div>
+                    <div class="flex-row" role="cell">
+                      <li key={date.id}> {date.timePracticed}</li>
+                    </div>
+                    <div class="flex-row" role="cell">
+                      <li key={date.id}>{date.scales}</li>
+                    </div>
+                    <div class="flex-row" role="cell">
+                      <li key={date.id}> {date.otherMusic}</li>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
     );
   }
 }
+export default requiresLogin()(Practices);

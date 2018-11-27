@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import RegistrationForm from './RegistrationForm';
+import Header from './Header';
 import './RegistrationPage.css';
 
 export function RegistrationPage(props) {
@@ -11,6 +12,8 @@ export function RegistrationPage(props) {
     return <Redirect to="/dashboard" />;
   }
   return (
+    <div>
+      <Header />
     <div className="wrapper">
       <div className="flex-container">
         <h2 className="intro-text">Create An Account</h2>
@@ -24,6 +27,7 @@ export function RegistrationPage(props) {
           </Link>
         </div>
       </div>
+    </div>
     </div>
   );
 }

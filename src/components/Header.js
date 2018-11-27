@@ -20,30 +20,24 @@ export class HeaderBar extends React.Component {
     // Only render the log out button if we are logged in
     let logOutButton;
     let usersFirstName;
-    let logInButton;
-    let registerButton;
     let myDashboard;
     let myPractices;
     if (this.props.loggedIn) {
       logOutButton = (
-        <button className="logout-btn" onClick={() => this.logOut()}>
+        <button className="nav-btn" onClick={() => this.logOut()}>
           Log out
         </button>
       );
       myDashboard = (
-        <a href="/dashboard" className="nav-item">
+        <a href="/dashboard" className="nav-item nav-btn">
           My Dashboard
         </a>
       );
-      myPractices = <a href="/practices">My Practices</a>;
-    }
-    if (this.props.loggedOut) {
-      logInButton = (
-        <Link to="/login" className="nav-item">
-          Login
-        </Link>
+      myPractices = (
+        <a href="/practices" className="nav-btn">
+          My Practices
+        </a>
       );
-      registerButton = <Link to="/register">Register</Link>;
     }
     return (
       <header>
@@ -56,8 +50,6 @@ export class HeaderBar extends React.Component {
               />
             </Link>
           </div>
-          {logInButton}
-          {registerButton}
           {usersFirstName}
           {myDashboard}
           {myPractices}

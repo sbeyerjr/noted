@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import LoginForm from './LoginForm';
+import Header from './Header';
 import './Login.css';
 
 export function LandingPage(props) {
@@ -11,17 +12,20 @@ export function LandingPage(props) {
   }
 
   return (
-    <div className="wrapper">
-      <div className="flex-container">
-        <h2 className="intro-text">Login</h2>
-        <LoginForm />
-        <div className="flex-item">
-          <Link to="/register">
-            <button class="fp-button">Register</button>
-          </Link>
-          <Link to="/">
-            <button class="fp-button">Back Home</button>
-          </Link>
+    <div>
+      <Header />
+      <div className="wrapper">
+        <div className="flex-container">
+          <h2 className="intro-text">Login</h2>
+          <LoginForm />
+          <div className="flex-item">
+            <Link to="/register">
+              <button className="fp-button">Register</button>
+            </Link>
+            <Link to="/">
+              <button className="fp-button">Back Home</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

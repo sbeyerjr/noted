@@ -19,7 +19,7 @@ export class PracticeForm extends React.Component {
       >
         <label htmlFor="date">Today's Date</label>
         <Field component={Input} type="text" name="date" />
-        <label htmlFor="timePracticed">How Long Did You Practice?</label>
+        <label htmlFor="timePracticed">How Many Minutes Did You Practice?</label>
         <Field component={Input} type="text" name="timePracticed" />
         <label htmlFor="scales">Which Scales Did You Practice?</label>
         <Field component={Input} type="text" name="scales" />
@@ -27,7 +27,7 @@ export class PracticeForm extends React.Component {
           What Other Music Did You Practice? Be Specific.
         </label>
         <Field component={Input} type="text" name="otherMusic" />
-        <button
+        <button className="button-reg"
           type="submit"
           disabled={this.props.pristine || this.props.submitting}
         >
