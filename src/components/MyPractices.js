@@ -8,12 +8,12 @@ import requiresLogin from './RequiresLogin';
 class Practices extends React.Component {
   // State will apply to the practices object which is set to loading by default
   state = {
-    dates: [],
+    practices: [],
     isLoading: true,
     errors: null
   };
   // Now we're going to make a request for data using axios
-  getDate() {
+  getPractice() {
     axios
       // This is where the data is hosted
       .get(`${API_BASE_URL}/practice`, {
@@ -23,12 +23,12 @@ class Practices extends React.Component {
       })
       // Once we get a response and store data, let's change the loading state
       .then(res => {
-        this.setState({ dates: res.data });
+        this.setState({ practices: res.data });
       });
   }
   // Let's our app know we're ready to render the data
   componentDidMount() {
-    this.getDate();
+    this.getPractice();
   }
   // Putting that data to use
   render() {
@@ -53,19 +53,19 @@ class Practices extends React.Component {
                 </div>
               </div>
               <div>
-                {this.state.dates.map(date => (
+                {this.state.practices.map(practice => (
                   <div class="flex-table row" role="rowgroup">
                     <div class="flex-row first" role="cell">
-                      <li key={date.id}> {date.date}</li>
+                      <li key={practice.id}> {practice.date}</li>
                     </div>
                     <div class="flex-row" role="cell">
-                      <li key={date.id}> {date.timePracticed}</li>
+                      <li key={practice.id}> {practice.timePracticed}</li>
                     </div>
                     <div class="flex-row" role="cell">
-                      <li key={date.id}>{date.scales}</li>
+                      <li key={practice.id}>{practice.scales}</li>
                     </div>
                     <div class="flex-row" role="cell">
-                      <li key={date.id}> {date.otherMusic}</li>
+                      <li key={practice.id}> {practice.otherMusic}</li>
                     </div>
                   </div>
                 ))}
