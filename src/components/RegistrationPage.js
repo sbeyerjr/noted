@@ -20,10 +20,10 @@ export function RegistrationPage(props) {
         <RegistrationForm />
         <div className="flex-item">
           <Link to="/login">
-            <button class="fp-button">Login</button>
+            <button className="fp-button">Login</button>
           </Link>
           <Link to="/">
-            <button class="fp-button">Back Home</button>
+            <button className="fp-button">Back Home</button>
           </Link>
         </div>
       </div>

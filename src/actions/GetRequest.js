@@ -3,9 +3,9 @@ import { normalizeResponseErrors } from './Utils';
 import axios from 'axios';
 
 export const PRACTICE_SUCCESS = 'PRACTICE_SUCCESS';
-export const practiceSuccess = date => ({
+export const practiceSuccess = practice => ({
   type: PRACTICE_SUCCESS,
-  date
+  practice
 });
 
 export const PRACTICE_ERROR = 'PRACTICE_ERROR';

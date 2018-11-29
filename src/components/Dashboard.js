@@ -5,6 +5,7 @@ import { fetchProtectedData } from '../actions/ProtectedData';
 import PracticeForm from './PracticeForm';
 import Header from './Header';
 import './Dashboard.css';
+import PracticeTime from './PracticeData';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
@@ -15,6 +16,7 @@ export class Dashboard extends React.Component {
     return (
       <div className="dashboard">
         <Header />
+        <PracticeTime />
         <div className="wrapper">
           <div className="flex-container">
             <h2 className="flex-item">

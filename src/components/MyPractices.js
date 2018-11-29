@@ -37,34 +37,34 @@ class Practices extends React.Component {
         <Header />
         <div className="wrapper">
           <div className="flex-container">
-            <div class="table-container" role="table" aria-label="Destinations">
-              <div class="flex-table header" role="rowgroup">
-                <div class="flex-row first" role="columnheader">
+            <div className="table-container" role="table" aria-label="Destinations">
+              <div className="flex-table header" role="rowgroup">
+                <div className="flex-row first" role="columnheader">
                   DATE
                 </div>
-                <div class="flex-row" role="columnheader">
+                <div className="flex-row" role="columnheader">
                   MINUTES PRACTICED
                 </div>
-                <div class="flex-row" role="columnheader">
+                <div className="flex-row" role="columnheader">
                   SCALES PRACTICED
                 </div>
-                <div class="flex-row" role="columnheader">
+                <div className="flex-row" role="columnheader">
                   OTHER MUSIC PRACTICED
                 </div>
               </div>
               <div>
                 {this.state.practices.map(practice => (
-                  <div class="flex-table row" role="rowgroup">
-                    <div class="flex-row first" role="cell">
+                  <div className="flex-table row" role="rowgroup">
+                    <div className="flex-row first" role="cell">
                       <li key={practice.id}> {practice.date}</li>
                     </div>
-                    <div class="flex-row" role="cell">
+                    <div className="flex-row" role="cell">
                       <li key={practice.id}> {practice.timePracticed}</li>
                     </div>
-                    <div class="flex-row" role="cell">
+                    <div className="flex-row" role="cell">
                       <li key={practice.id}>{practice.scales}</li>
                     </div>
-                    <div class="flex-row" role="cell">
+                    <div className="flex-row" role="cell">
                       <li key={practice.id}> {practice.otherMusic}</li>
                     </div>
                   </div>

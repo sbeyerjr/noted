@@ -32,3 +32,6 @@ label {
   cursor: pointer;
   transition: 0.5s;
 }
+.success {
+  color: white;
+}
